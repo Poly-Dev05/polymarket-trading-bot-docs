@@ -53,8 +53,9 @@ You can tap these buttons or type the same text. You can also use **commands** (
 - **How to stop:** Tap **🛑 Stop** under the running message.
 - **Requirements:** None. Your private key is not required for paper trading.
 
-If you see *“A trading session is already running”*, stop the current run first. If you see *“Too many users are running Paper/Real right now”*, wait a few minutes and try again.
-
+This paper trading is same as live trading with 98.7%.
+As you can see logs on Telegram bot, please compare with live result and bot result.
+Perhaps they are same
 ---
 
 ## Real Trading
