@@ -1,6 +1,10 @@
-Guide
-<img width="380" height="697" alt="image" src="https://github.com/user-attachments/assets/22b88fbc-e59d-4063-92cc-42bc224b245c" />
-
+<table>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/3f2c6363-15da-4f6d-b578-07bc46f34310" width="100%"/></td>
+    <td><img src="https://github.com/user-attachments/assets/c66b1691-fcc3-4cfc-8ed4-4a227aac2b93" width="100%"/></td>
+    <td><img src="https://github.com/user-attachments/assets/7de4ffe1-ec15-4a6a-ab47-e1016c644181" width="100%"/></td>
+  </tr>
+</table>
 This guide is for **people who use the Polymarket trading Telegram bot** — how to trade, manage your wallet, change settings, and stay safe. If you run the bot yourself, see **README.md** for setup.
 
 ---
