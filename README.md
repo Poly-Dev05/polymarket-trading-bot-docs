@@ -1,21 +1,34 @@
-Guide
-
-This guide is for **people who use the Poly5M Telegram bot** — how to trade, manage your wallet, change settings, and stay safe. If you run the bot yourself, see **README.md** for setup.
+<table>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/3f2c6363-15da-4f6d-b578-07bc46f34310" width="100%"/></td>
+    <td><img src="https://github.com/user-attachments/assets/c66b1691-fcc3-4cfc-8ed4-4a227aac2b93" width="100%"/></td>
+    <td><img src="https://github.com/user-attachments/assets/7de4ffe1-ec15-4a6a-ab47-e1016c644181" width="100%"/></td>
+  </tr>
+</table>
+This guide is for **people who use the Polymarket trading Telegram bot** — how to trade, manage your wallet, change settings, and stay safe. If you run the bot yourself, see **README.md** for setup.
 
 ---
 
-## What is Poly5M?
+## What is Polymarket trading bot?
 
-**Poly5M** is a Telegram bot for **Polymarket 5-minute markets**. You can:
+**Polymarket MM Arb Bot** is a Telegram bot for **Polymarket 5-minute markets**. You can:
 
 - **Paper trade** — Run the strategy with fake money (no real orders).
 - **Real trade** — Run the strategy with real USDC (requires your wallet key and a trial).
 - **Wallet** — See your balance, get deposit addresses, and withdraw to other chains.
-- **Referrals** — Share your link and earn (if enabled by the operator).
-- **Settings** — Choose markets (BTC, ETH, SOL, XRP), set buy threshold, amount, and risk.
 - **Help** — Tutorial, community, and docs links.
 
-The bot trades **5-minute prediction markets** (e.g. “Will BTC be above $X in 5 minutes?”). Strategy: buy when the best ask is above a threshold, with optional risk exit near the end of the round. **Redeem** (cashing out winning positions) runs automatically after resolution when you have it enabled in Settings.
+The bot trades 5-minute prediction markets (e.g., “Will BTC be above $X in 5 minutes?”), executing orders at optimal market conditions rather than fixed thresholds.
+
+It is designed to strategically push orders at suitable times, improving entry efficiency and overall trade quality.
+
+Strategy Overview
+Smart Order Execution: Places trades when market conditions are favorable, rather than relying on static triggers.
+Market Maker Integration: Works alongside market-making logic to provide better liquidity positioning and tighter spreads.
+Arbitrage Synergy: Leverages arbitrage opportunities across price discrepancies to enhance profitability.
+Hedging Mechanism: Uses high prediction accuracy to balance exposure by adjusting positions in the next 5-minute market instead of hedging within the same round.
+Optional Risk Exit: Can close positions near the end of a round to limit downside exposure.
+Auto Redemption: Automatically redeems (cashes out) winning positions after market resolution when enabled in Settings.
 
 ---
 
@@ -25,10 +38,9 @@ The bot trades **5-minute prediction markets** (e.g. “Will BTC be above $X in 
 2. Send **`/start`**.
 3. The bot replies with “Welcome to **Poly5M**. Choose an action:” and shows the **main menu**:
 
-   | 📈 Paper Trading | 💵 Real Trading |
+   | 💰 Real Trading | 📊 Paper Trading |
    |------------------|-----------------|
-   | 👛 Wallet        | 🎁 Referrals    |
-   | ⚙️ Settings      | 📖 Help         |
+   | 👛 Wallet        | 📖 Help  |
 
 You can tap these buttons or type the same text. You can also use **commands** (see below).
 
@@ -37,7 +49,7 @@ You can tap these buttons or type the same text. You can also use **commands** (
 ## Paper Trading
 
 - **What it does:** Runs one strategy cycle in **dry-run** — no real orders, no real money. You see live logs (e.g. best bid/ask) in the chat.
-- **How to start:** Tap **📈 Paper Trading** or send **`/paper`**.
+- **How to start:** Tap **📊 Paper Trading** or send **`/paper`**.
 - **How to stop:** Tap **🛑 Stop** under the running message.
 - **Requirements:** None. Your private key is not required for paper trading.
 
@@ -49,7 +61,7 @@ If you see *“A trading session is already running”*, stop the current run fi
 
 - **What it does:** Runs the same strategy with **real USDC** — live orders on Polymarket.
 - **Trial:** Real trading is limited to a **24-hour trial** per user. After that, you’ll see a message to upgrade (e.g. contact link). Use **`/upgrade`** for details. **Paper trading stays free.**
-- **How to start:** Tap **💵 Real Trading** or send **`/real`**. You must have set your **private key** in **Settings** (see below); otherwise the bot cannot place real orders.
+- **How to start:** Tap **💰 Real Trading** or send **`/real`**. You must have set your **private key** in **Settings** (see below); otherwise the bot cannot place real orders.
 - **How to stop:** Tap **🛑 Stop** under the running message.
 
 Before starting, the bot may check/approve tokens; then it streams logs like in Paper Trading. **Only use Real Trading with funds you can afford to lose.**
@@ -81,41 +93,6 @@ You’ll see:
 - **📈 Portfolio** — (May show “not implemented yet” depending on version.)
 
 ---
-
-## Referrals
-
-Tap **🎁 Referrals** or send **`/referrals`**.
-
-You’ll see your **referral code** and **invite link**. Buttons may include:
-
-- **💸 Withdraw (Min $5)** — Withdraw referral earnings (if the operator wired this to a backend).
-- **📋 Copy Link** — Copy your referral link.
-- **🔄 Refresh** — Refresh the screen.
-
-Minimum withdrawal for referral payouts is typically **$5 USDC**.
-
----
-
-## Settings
-
-Tap **⚙️ Settings** or send **`/settings`**.
-
-Settings control **how** the bot trades (markets, entry, risk). Everything is **per user**.
-
-### Buy Above (strategy)
-
-- **Threshold** — Buy when best ask is above this (e.g. 0.95).
-- **Amount ($)** — USDC amount per buy (e.g. 10).
-- **Redeem Delay (s)** — Seconds to wait after market resolution before redeeming.
-- **Risk Final (s)** — In the last N seconds of the round, risk rules apply.
-- **Risk Drop** — If best ask drops by this much in the final seconds, the bot can sell and buy opposite.
-- **Risk Opposite ($)** — USDC amount for the opposite side in that case.
-
-Tap a row to **edit** that value; the bot will ask you to type the new value in chat.
-
-### Risk Management
-
-- **Stop Loss (%)** — Exit if the position drops by this percentage (e.g. 8).
 
 ### Markets
 
@@ -151,12 +128,8 @@ Reminder: **Deposit only to your own wallet addresses. Never share your private 
 | `/start` | Start the bot and show the main menu |
 | `/paper` | Start Paper Trading |
 | `/real` | Start Real Trading |
-| `/upgrade` | Show upgrade/premium contact (after trial ends) |
 | `/wallet` | Open Wallet |
-| `/referrals` | Open Referrals |
-| `/settings` | Open Settings |
 | `/help` | Open Help |
-| `/settings_export` | Send your config file (secrets redacted) |
 
 ---
 
@@ -175,12 +148,10 @@ Reminder: **Deposit only to your own wallet addresses. Never share your private 
 ## What the strategy does (short)
 
 - Subscribes to Polymarket 5m orderbooks (e.g. BTC, ETH, SOL, XRP).
-- **Entry:** When best ask is above your **threshold**, the bot buys for your **amount** (in “buy above” mode).
-- **Risk:** Near the end of the round (**Risk Final** seconds), if the ask **drops** by **Risk Drop**, it can sell and buy the opposite side for **Risk Opposite** amount. **Stop Loss %** can also close the position if it drops too much.
+- **Entry:** When detect good momentum, the bot pushs for your **amount** (in “buy above” mode).
 - **Redeem:** After the market resolves, the bot waits **Redeem Delay** seconds then redeems winning positions (gasless if the operator set up Builder API).
 
-All of this is configurable in **Settings** and runs in one cycle when you start Paper or Real Trading; you stop it with **🛑 Stop**.
-
 ---
+You can upgrade your amount by contacting TG community members.
 
 For **running and installing** the bot (operators), see **README.md** and the project’s setup instructions.
