@@ -102,7 +102,6 @@ You’ll see:
 ### Wallet security
 
 - **🔑 Export Private Key** — Shows a warning, then (if you confirm) displays your private key in chat. **Never share it.** Use this only if you need to import the same wallet elsewhere (e.g. Polymarket website). Delete the message after copying.
-
 To get a copy of your config with secrets hidden, use **`/settings_export`** — the bot will send your YAML with private key and API secrets redacted.
 
 ---
