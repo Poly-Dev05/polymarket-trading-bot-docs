@@ -8,7 +8,6 @@
 This guide is for **people who use the Polymarket trading Telegram bot** — how to trade, manage your wallet, change settings, and stay safe. If you run the bot yourself, see **README.md** for setup.
 
 ---
-
 ## What is Polymarket trading bot?
 
 **Polymarket MM Arb Bot** is a Telegram bot for **Polymarket 5-minute markets**. You can:
